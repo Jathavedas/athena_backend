@@ -80,6 +80,10 @@ def decode_tuya_color(color_data):
 def index():
     return jsonify({"status": "ATHENA Lighting Control API is running"})
 
+@app.route('/ping', methods=['GET', 'HEAD'])
+def ping():
+    return "OK", 200
+
 @app.route('/api/bulb/toggle', methods=['POST'])
 def toggle_bulb():
     try:
